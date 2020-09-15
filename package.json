@@ -1,0 +1,26 @@
+{
+  "name": "workout_tracker",
+  "version": "1.0.0",
+  "description": "a workout tracker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeders/seed.js"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^5.3.16",
+    
+  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k97aw02/workout_tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/k97aw02/workout_tracker/issues"
+  },
+  "homepage": "https://github.com/k97aw02/workout_tracker#readme"
+}
