@@ -3,9 +3,7 @@ const Workout = require("../models/workouts.js");
 module.exports = function (app) {
   app.get("/api/workouts", function (req, res) {
     Workout.find()
-      .then((data) => {
-        res.json(data);
-      })
+      .then((data) => res.json(data))
       .catch((err) => {
         res.json(err);
       });
@@ -15,7 +13,6 @@ module.exports = function (app) {
     Workout.create({})
       .then((data) => res.json(data))
       .catch((err) => {
-        console.log("err", err);
         res.json(err);
       });
   });
@@ -28,8 +25,16 @@ module.exports = function (app) {
     )
       .then((data) => res.json(data))
       .catch((err) => {
-        console.log("err", err);
         res.json(err);
       });
   });
 };
+
+router.get("/api/workouts/range", (req, res) => {
+    Workout.find({}).sort({'day': 1}).limit(7)
+    .then((data) => res.json(data))
+    .catch(err => {
+        res.json(err);
+    });
+});
+module.exports = router;
