@@ -2,11 +2,13 @@ const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 
-app.use(morgan("dev"));
 
-// Setting up Express App
+
+// initialize Express as App
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(morgan("dev"));
 
 // use Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
